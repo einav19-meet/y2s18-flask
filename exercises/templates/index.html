@@ -5,8 +5,19 @@
     	<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
 
     </head>
-        <body>
-            <h1> Hello My Loves</h1>
-            <p> I Love You </p>
+		<body background="1.jpg">
+        	  {% if likes_same_sport == true %}
+               <h1> Hello My Loves</h1>
+            <p> I Love You, becaouse you love the same sport! </p>
+            <h1> Hello {{player1}}!</h1>
+  <ul>
+      	{% for player in players %}
+      	<li> {{player}} </li>
+      	{% endfor %}
+      </ul>
+            {% else %}
+                <p> ERROR 404 </p>
+            {% endif %}
+
         </body>
     </html>
